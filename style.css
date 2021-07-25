@@ -2,6 +2,10 @@
     z-index: 1;
 }
 
+.logosheader{
+    display: none;
+}
+
 .carousel-inner{
     text-shadow: 2px 2px 2px  black;
     border-radius: 150px;
@@ -12,9 +16,11 @@
     margin-top: 50px;
 }
 
-h2{
-    margin-bottom: 20px;
+.titulos{
+    display: flex;
+    margin-bottom: 30px;
 }
+
 
 .card{
     width: 180px;
@@ -40,4 +46,10 @@ h2{
 .row{
     text-align:center;
     font-size: auto;
+}
+
+@media (min-width:300px){
+    .logosheader{
+        display:flex;
+    } 
 }
