@@ -159,4 +159,26 @@ export const consolas = [
         "image": "https://raw.githubusercontent.com/AnthonyMerive/netnet/main/images/consolas/switch.png",
         "prize": "$1.200.000",
     },
+    {
+        "id": 4,
+        "name": "console-4",
+        "game": "PlayStation 4",
+        "image": "https://raw.githubusercontent.com/AnthonyMerive/netnet/main/images/consolas/ps5.png",
+        "prize": "$2.000.000",
+    },
+    {
+        "id": 5,
+        "name": "console-5",
+        "game": "Xbox One",
+        "image": "https://raw.githubusercontent.com/AnthonyMerive/netnet/main/images/consolas/xboxsx.png",
+        "prize": "$1.800.000",
+    },
+    {
+        "id": 6,
+        "name": "console-6",
+        "game": "Retro Box",
+        "image": "https://raw.githubusercontent.com/AnthonyMerive/netnet/main/images/consolas/switch.png",
+        "prize": "$600.000",
+    },
+
 ]

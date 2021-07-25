@@ -1,16 +1,19 @@
-import { playstation,xbox,nintendo } from './data.js';
+import { playstation,xbox,nintendo,consolas } from './data.js';
 
 const ps = document.getElementById('templatePs').content;
 const xb = document.getElementById('templateXbox').content;
 const nd = document.getElementById('templateNintendo').content;
+const cn = document.getElementById('templateConsola').content;
 const fragment = document.createDocumentFragment();
 const psItems = document.getElementById('psItems');
 const xboxItems = document.getElementById('xboxItems');
 const nintendoItems = document.getElementById('nintendoItems');
+const consolaItems = document.getElementById('consolaItems');
 document.addEventListener('DOMContentLoaded', () => {
     cargarPs(playstation);
     cargarXbox(xbox);
     cargarNintendo(nintendo);
+    cargarConsolas(consolas);
 })
 
 const cargarPs = playstation => {
@@ -50,4 +53,17 @@ const cargarNintendo = nintendo => {
         fragment.appendChild(clone)
     });
     nintendoItems.appendChild(fragment);
+}
+
+const cargarConsolas = consolas => {
+    console.log(consolas);
+    consolas.forEach(consolaGame => {
+        const { game, image, prize } = consolaGame;
+        cn.querySelector('h5').textContent = game;
+        cn.querySelector('img').setAttribute('src', image);
+        cn.querySelector('p').textContent = prize;
+        const clone = cn.cloneNode(true);
+        fragment.appendChild(clone)
+    });
+    consolaItems.appendChild(fragment);
 }

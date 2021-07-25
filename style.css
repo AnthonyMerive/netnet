@@ -25,8 +25,10 @@
 .card{
     width: 180px;
     display: flex;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    box-shadow: 2px 4px 5px black;
 }
 
 .card:hover{
@@ -48,8 +50,25 @@
     font-size: auto;
 }
 
-@media (min-width:300px){
+.piePag{
+    background-color: rgb(241, 242, 243);
+    padding:20px;
+    text-align: right;
+}
+
+.piePag strong{
+    color: rgb(17, 91, 177);
+}
+
+/*agregando estilo para que no se vea vacia la navbar en pantalla completa*/
+@media (min-width: 1024px){
+
     .logosheader{
-        display:flex;
+       display: inline-flex;
+       margin-right: 10px;
     } 
+
+    .logosheader img{
+        margin-left: 10px;
+    }
 }

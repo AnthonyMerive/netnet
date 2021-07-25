@@ -33,17 +33,17 @@
                             <a class="nav-link" href="#">Carrito</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Consolas</a>
+                            <a class="nav-link" href="#consolas">Consolas</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                VideoJuegos
+                                <strong>VideoJuegos</strong>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Playstation 5</a></li>
-                                <li><a class="dropdown-item" href="#">Xbox Series X</a></li>
-                                <li><a class="dropdown-item" href="#">Nintendo Switch</a></li>
+                                <li><a class="dropdown-item" href="#ps5">Playstation 5</a></li>
+                                <li><a class="dropdown-item" href="#xbox">Xbox Series X|S</a></li>
+                                <li><a class="dropdown-item" href="#switch">Nintendo Switch</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -109,7 +109,7 @@
     <!--items-->
 
     <!--PS5-->
-    <div class="container">
+    <div class="container"  id="ps5">
         <div class="titulos">
             <img src="./images/ps5/ps5logo.png" alt="">
             <h2>-PlayStation 5</h2>
@@ -128,7 +128,7 @@
 
     <!--Xbox-->
 
-    <div class="container">
+    <div class="container"  id="xbox">
         <div class="titulos">
             <img src="./images/xbox/xboxlogo.png" alt="">
             <h2>-Xbox Series X|S</h2>
@@ -147,7 +147,7 @@
 
     <!--Nintendo-->
 
-    <div class="container">
+    <div class="container"  id="switch">
         <div class="titulos">
             <img src="./images/switch/switchlogo.png" alt="">
             <h2>-Nintendo Switch</h2>
@@ -164,7 +164,29 @@
         </div>
     </div>
 
+    <!--consolas-->
 
+    <div class="container"  id="consolas">
+        <div class="titulos">
+            <h2>Consolas</h2>
+        </div>
+        <div id="consolaItems" class="row">
+            <template id="templateConsola">
+                <div class="card">
+                    <img id="image" src="" alt=""></img>
+                    <h5></h5>
+                    <p class="card-text py-2 text-center"></p>
+                    <a href="#" class="d-grid gap-3 btn btn-primary">Comprar</a>
+                </div>
+            </template>
+        </div>
+    </div>
+
+
+<!--footer-->
+    <footer class="piePag">
+        <p>© Todos los derechos reservados <strong>GitHub:AnthonyMerive</strong></p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
