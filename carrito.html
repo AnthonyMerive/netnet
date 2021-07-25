@@ -1,12 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>NETNET STORE</title>
 </head>
-<body>
-    
+
+<body class="contenedor">
+
+    <!--encabezado-->
+    <header class="encabezado container-fuid position-sticky top-0">
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="./images/navbar.jpg" width="80px" alt="#" srcset="">NETNET
+                    STORE</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  active" href="#">Carrito</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html#consolas">Consolas</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <strong>VideoJuegos</strong>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="./index.html#ps5">Playstation 5</a></li>
+                                <li><a class="dropdown-item" href="./index.html#xbox">Xbox Series X|S</a></li>
+                                <li><a class="dropdown-item" href="./index.html#switch">Nintendo Switch</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logosheader">
+                <img src="./images/ps5/ps5logo.png" alt="">
+                <img src="./images/xbox/xboxlogo.png" alt="">
+                <img src="./images/switch/switchlogo.png" alt="">
+            </div>
+        </nav>
+    </header>
+
+    <!--contenido-->
+
+    <!--Carrusel-->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./images/carrusel/2.png" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>DISFRUTA DE EXPERIENCIAS INCREIBLES</h5>
+                    <p>Disfruta de todos los juegos que ofrecemos para ti.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./images/carrusel/4.png" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>EXPLORA TODO NUESTRO CATALOGO</h5>
+                    <p>Tenemos un catalogo amplio y exclusivo con los mejores juegos.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://raw.githubusercontent.com/AnthonyMerive/netnet/main/images/carrusel/3.png"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>APROVECHA NUESTROS DESCUENTOS ESPECIALES</h5>
+                    <p>Tenemos los mejores precios del mercado de videojuegos.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!--carrito-->
+
+    <div class="titulos" id="ps5">
+        <img src="./images/carrito.png" alt="">
+        <h2>Carrito</h2>
+    </div>
+
+    <table class="table table-striped table-light container">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <th scope="row">1</th>
+                <td class="table__productos">
+                    <img src="./images/xbox/metro-exodus.png" style="width: 50px;" alt="">
+                </td>
+                <td class="table__title">
+                    <h5 class="title">Metro Exodus</h5>
+                </td>
+                <td class="table__price">
+                    <p>48.000</p>
+                </td>
+                <td class="table__cantidad">
+                    <input type="number" min="1" max="5" value="1" class="input__elemento" style="width: 50px;">
+                    <button class="delete btn btn-danger">x</button>
+                    <button class="success btn btn-success">✓</button>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">2</th>
+                <td class="table__productos">
+                    <img src="./images/ps5/COD-coldWar.png" style="width: 50px;" alt="">
+                </td>
+                <td class="table__title">
+                    <h5 class="title">COD: Cold War</h5>
+                </td>
+                <td class="table__price">
+                    <p>48.000</p>
+                </td>
+                <td class="table__cantidad">
+                    <input type="number" min="1" max="5" value="1" class="input__elemento" style="width: 50px;">
+                    <button class="delete btn btn-danger">x</button>
+                    <button class="success btn btn-success">✓</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <!--Footer-->
+    <footer class="piePag">
+        <p>© Todos los derechos reservados <strong>GitHub:AnthonyMerive</strong></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

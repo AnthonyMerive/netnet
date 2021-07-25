@@ -12,27 +12,32 @@
     border:1px solid black;
 }
 
-.container{
-    margin-top: 50px;
-}
-
 .titulos{
+    margin:50px 0 30px 60px;
     display: flex;
-    margin-bottom: 30px;
 }
 
+.container{
+    align-items: center ;
+    margin-top: 20px;
+    margin-left: 5%;
+}
 
 .card{
-    width: 180px;
+    background-color: rgb(236, 236, 236);
+    width: 300px;
     display: flex;
-    margin-left: auto;
-    margin-bottom: 20px;
+    margin: 0 0 20px 50px;
     padding-bottom: 20px;
     box-shadow: 2px 4px 5px black;
 }
 
 .card:hover{
     transform: scale(1.03);
+}
+
+.card a{
+    box-shadow: 2px 2px  black;
 }
 
 #image{
@@ -50,6 +55,11 @@
     font-size: auto;
 }
 
+#consolaItems .card img{
+    height: 150px;
+    
+}
+
 .piePag{
     background-color: rgb(241, 242, 243);
     padding:20px;
@@ -60,8 +70,30 @@
     color: rgb(17, 91, 177);
 }
 
-/*agregando estilo para que no se vea vacia la navbar en pantalla completa*/
+/*agregando estilo para que no se vea vacia la navbar y se ajuste el tamaño de las cards en pantalla completa*/
+
 @media (min-width: 1024px){
+  
+    .logosheader{
+       display: inline-flex;
+       margin-right: 10px;
+    } 
+
+    .logosheader img{
+        margin-left: 10px;
+    }
+
+    .card{
+        width: 250px;
+        display: flex;
+        margin-left: auto;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        box-shadow: 2px 4px 5px black;
+    }
+}
+
+@media (min-width: 1200px){ /*escritorio*/
 
     .logosheader{
        display: inline-flex;
@@ -71,4 +103,14 @@
     .logosheader img{
         margin-left: 10px;
     }
+
+    .card{
+        width: 180px;
+        display: flex;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        box-shadow: 2px 4px 5px black;
+    }
 }
+

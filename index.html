@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>VideoGames Store</title>
+    <title>NETNET STORE</title>
 </head>
 
 <body class="contenedor">
@@ -17,8 +17,7 @@
         <!--NAVBAR-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="./images/navbar.jpg" width="80px" alt="#" srcset="">VIDEOGAME
-                    STORE</a>
+                <a class="navbar-brand" href="#"><img src="./images/navbar.jpg" width="80px" alt="#" srcset="">NETNET STORE</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -30,7 +29,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Carrito</a>
+                            <a class="nav-link" href="./carrito.html">Carrito</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#consolas">Consolas</a>
@@ -109,11 +108,11 @@
     <!--items-->
 
     <!--PS5-->
-    <div class="container"  id="ps5">
-        <div class="titulos">
-            <img src="./images/ps5/ps5logo.png" alt="">
-            <h2>-PlayStation 5</h2>
-        </div>
+    <div class="titulos" id="ps5">
+        <img src="./images/ps5/ps5logo.png" alt="">
+        <h2>-PlayStation 5</h2>
+    </div>
+    <div class="container">
         <div id="psItems" class="row">
             <template id="templatePs">
                 <div class="card">
@@ -127,56 +126,53 @@
     </div>
 
     <!--Xbox-->
-
-    <div class="container"  id="xbox">
-        <div class="titulos">
-            <img src="./images/xbox/xboxlogo.png" alt="">
-            <h2>-Xbox Series X|S</h2>
-        </div>
+    <div class="titulos" id="xbox">
+        <img src="./images/xbox/xboxlogo.png" alt="">
+        <h2>-Xbox Series X|S</h2>
+    </div>
+    <div class="container">
         <div id="xboxItems" class="row">
             <template id="templateXbox">
                 <div class="card">
                     <img id="image" src="" alt=""></img>
                     <h5></h5>
                     <p class="card-text py-2 text-center"></p>
-                    <a href="#" class="d-grid gap-3 btn btn-primary">Comprar</a>
+                    <a href="#" class="d-grid gap-3 btn btn-success">Comprar</a>
                 </div>
             </template>
         </div>
     </div>
 
     <!--Nintendo-->
-
-    <div class="container"  id="switch">
-        <div class="titulos">
-            <img src="./images/switch/switchlogo.png" alt="">
-            <h2>-Nintendo Switch</h2>
-        </div>
+    <div class="titulos" id="switch">
+        <img src="./images/switch/switchlogo.png" alt="">
+        <h2>-Nintendo Switch</h2>
+    </div>
+    <div class="container">
         <div id="nintendoItems" class="row">
             <template id="templateNintendo">
                 <div class="card">
                     <img id="image" src="" alt=""></img>
                     <h5></h5>
                     <p class="card-text py-2 text-center"></p>
-                    <a href="#" class="d-grid gap-3 btn btn-primary">Comprar</a>
+                    <a href="#" class="d-grid gap-3 btn btn-danger">Comprar</a>
                 </div>
             </template>
         </div>
     </div>
 
     <!--consolas-->
-
-    <div class="container"  id="consolas">
-        <div class="titulos">
-            <h2>Consolas</h2>
-        </div>
+    <div class="titulos" id="consolas">
+        <h2>Consolas</h2>
+    </div>
+    <div class="container">
         <div id="consolaItems" class="row">
             <template id="templateConsola">
                 <div class="card">
                     <img id="image" src="" alt=""></img>
                     <h5></h5>
                     <p class="card-text py-2 text-center"></p>
-                    <a href="#" class="d-grid gap-3 btn btn-primary">Comprar</a>
+                    <a href="#" class="d-grid gap-3 btn btn-warning">Comprar</a>
                 </div>
             </template>
         </div>
