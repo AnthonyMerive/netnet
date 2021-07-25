@@ -2,6 +2,12 @@
     z-index: 1;
 }
 
+.carousel-inner{
+    text-shadow: 2px 2px 2px  black;
+    border-radius: 150px;
+    border:1px solid black;
+}
+
 .container{
     margin-top: 50px;
 }
