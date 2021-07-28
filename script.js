@@ -1,3 +1,5 @@
+//Carga de juegos en items
+
 import { playstation,xbox,nintendo,consolas } from './data.js';
 
 const ps = document.getElementById('templatePs').content;
@@ -67,3 +69,4 @@ const cargarConsolas = consolas => {
     });
     consolaItems.appendChild(fragment);
 }
+
