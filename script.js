@@ -11,10 +11,10 @@ const psItems = document.getElementById('psItems');
 const xboxItems = document.getElementById('xboxItems');
 const nintendoItems = document.getElementById('nintendoItems');
 const consolaItems = document.getElementById('consolaItems');
-const productoPS = [];
-const productoXbox = [];
-const productoNtnd = [];
-const productoConsole = [];
+//const productoPS = [];
+// const productoXbox = [];
+// const productoNtnd = [];
+// const productoConsole = [];
 document.addEventListener('DOMContentLoaded', () => {
     cargarPs(playstation);
     cargarXbox(xbox);
@@ -63,7 +63,8 @@ const agregarPsGame = e => {
 
 
 const setPsGame = objetoPS => {
-
+    let productoPS = JSON.parse(localStorage.getItem("productos Ps5")) || [];
+    if(productoPS.length == 6) productoPS.shift();
     productoPS.push({
         id: `ps5-${objetoPS.querySelector('.btn-primary').dataset.id}`,
         titulo: objetoPS.querySelector('h5').textContent,
@@ -97,12 +98,14 @@ const agregarXboxGame = e => {
     if (e.target.classList.contains('btn-success')) {
         setXboxGame(e.target.parentElement);
         console.log('producto Agregado al carrito')
+        
     }
     e.stopPropagation();
 }
 
 const setXboxGame = objetoXbox => {
-
+    let productoXbox = JSON.parse(localStorage.getItem("productos Xbox")) || [];
+    if(productoXbox.length == 6) productoXbox.shift();
     productoXbox.push({
         id: `xbox-${objetoXbox.querySelector('.btn-success').dataset.id}`,
         titulo: objetoXbox.querySelector('h5').textContent,
@@ -140,7 +143,8 @@ const agregarNtndGame = e => {
 }
 
 const setNtndGame = objetoNtnd => {
-
+    let productoNtnd = JSON.parse(localStorage.getItem("productos Nintendo")) || [];
+    if(productoNtnd.length == 6) productoNtnd.shift();
     productoNtnd.push({
         id: `Ntnd-${objetoNtnd.querySelector('.btn-danger').dataset.id}`,
         titulo: objetoNtnd.querySelector('h5').textContent,
@@ -179,7 +183,8 @@ const agregarConsola = e => {
 
 
 const setConsola = objetoConsole => {
-
+    let productoConsole = JSON.parse(localStorage.getItem("productos Consola")) || [];
+    if(productoConsole.length == 6) productoConsole.shift();
     productoConsole.push({
         id: `cons-${objetoConsole.querySelector('.btn-warning').dataset.id}`,
         titulo: objetoConsole.querySelector('h5').textContent,
