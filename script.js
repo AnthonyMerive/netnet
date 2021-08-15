@@ -11,9 +11,7 @@ const psItems = document.getElementById('psItems');
 const xboxItems = document.getElementById('xboxItems');
 const nintendoItems = document.getElementById('nintendoItems');
 const consolaItems = document.getElementById('consolaItems');
-
 const carrito ={};
-
 document.addEventListener('DOMContentLoaded', () => {
     cargarPs(playstation);
     cargarXbox(xbox);
@@ -50,6 +48,7 @@ const agregarPsGame = e => {
 }
 
 const setPsGame = objetoPS => {
+    
     const productoPS ={
         id : objetoPS.querySelector('.btn-primary').dataset.id,
         titulo : objetoPS.querySelector('h5').textContent,
