@@ -4,8 +4,48 @@ const fragment = document.createDocumentFragment();
 
 let productosPs5 = JSON.parse(localStorage.getItem('productos Ps5'));
 let productosXbox = JSON.parse(localStorage.getItem('productos Xbox'));
-let productosNtnd= JSON.parse(localStorage.getItem('productos Nintendo'));
-let productosConsole= JSON.parse(localStorage.getItem('productos Consola'));
+let productosNtnd = JSON.parse(localStorage.getItem('productos Nintendo'));
+let productosConsole = JSON.parse(localStorage.getItem('productos Consola'));
+let productos = []
+
+//concatenando para crear los arreglos:
+if (productosPs5 == null && productosXbox == null && productosNtnd == null && productosConsole == null) {
+    productos = []
+} else if (productosXbox == null && productosNtnd == null && productosConsole == null) {
+    productos = productosPs5
+} else if (productosPs5 == null && productosNtnd == null && productosConsole == null) {
+    productos = productosXbox
+} else if (productosPs5 == null && productosXbox == null && productosConsole == null) {
+    productos = productosNtnd
+}else if(productosPs5 == null && productosXbox == null && productosNtnd == null){
+    productos = productosConsole
+//---------------------------------------
+}else if(productosPs5 == null && productosXbox == null){
+    productos = productosConsole.concat(productosNtnd)
+}else if(productosPs5 == null && productosNtnd == null){
+    productos = productosXbox.concat(productosConsole)
+}else if(productosPs5 == null && productosConsole == null){
+    productos = productosXbox.concat(productosNtnd)
+}else if(productosXbox == null && productosNtnd == null){
+    productos = productosPs5.concat(productosConsole)
+}else if(productosXbox == null && productosConsole == null){
+    productos = productosPs5.concat(productosNtnd)
+}else if(productosNtnd == null && productosConsole == null){
+    productos = productosPs5.concat(productosXbox)
+//--------------------------------------------------
+}else if(productosPs5 == null){
+    productos = productosXbox.concat(productosNtnd, productosConsole)
+}else if(productosXbox == null){
+    productos = productosPs5.concat(productosNtnd, productosConsole)
+}else if(productosNtnd == null){
+    productos = productosPs5.concat(productosXbox, productosConsole)
+}else if(productosConsole == null){
+    productos = productosPs5.concat(productosXbox, productosNtnd)
+//------------------------------------------------------
+}else{
+productos = productosPs5.concat(productosXbox, productosNtnd, productosConsole)}
+
+console.log(productos)
 // document.addEventListener('DOMContentLoaded', () => {
 //     cargarCarrito(productos);
 //     cargarCarritoXbox(productosXbox);
@@ -14,14 +54,14 @@ let productosConsole= JSON.parse(localStorage.getItem('productos Consola'));
 // })
 
 //const cargarCarrito = productos => {
-if(productosPs5){
-    productosPs5.forEach((p) => {
+if (productos) {
+    productos.forEach((p) => {
         const { id, imagen, precio, titulo } = p;
-        templateCarrito.querySelector('h5').textContent=titulo;
+        templateCarrito.querySelector('h5').textContent = titulo;
         templateCarrito.querySelector('img').setAttribute('src', imagen);
-        templateCarrito.querySelector('p').textContent=precio;
-        templateCarrito.querySelector('th').textContent=id;
-        const clone =templateCarrito.cloneNode(true);
+        templateCarrito.querySelector('p').textContent = precio;
+        templateCarrito.querySelector('th').textContent = id;
+        const clone = templateCarrito.cloneNode(true);
         fragment.appendChild(clone)
     })
     carrito.appendChild(fragment);
@@ -29,43 +69,43 @@ if(productosPs5){
 
 
 //const cargarCarritoXbox = productos => {
-    if(productosXbox){
-    productosXbox.forEach((p) => {
-        const { id, imagen, precio, titulo } = p;
-        templateCarrito.querySelector('h5').textContent=titulo;
-        templateCarrito.querySelector('img').setAttribute('src', imagen);
-        templateCarrito.querySelector('p').textContent=precio;
-        templateCarrito.querySelector('th').textContent=id;
-        const clone =templateCarrito.cloneNode(true);
-        fragment.appendChild(clone)
-    })
-    carrito.appendChild(fragment);
-}
+//     if(productosXbox){
+//     productosXbox.forEach((p) => {
+//         const { id, imagen, precio, titulo } = p;
+//         templateCarrito.querySelector('h5').textContent=titulo;
+//         templateCarrito.querySelector('img').setAttribute('src', imagen);
+//         templateCarrito.querySelector('p').textContent=precio;
+//         templateCarrito.querySelector('th').textContent=id;
+//         const clone =templateCarrito.cloneNode(true);
+//         fragment.appendChild(clone)
+//     })
+//     carrito.appendChild(fragment);
+// }
 
-//const cargarCarritoNtnd = productos => {
-    if(productosNtnd){
-    productosNtnd.forEach((p) => {
-        const { id, imagen, precio, titulo } = p;
-        templateCarrito.querySelector('h5').textContent=titulo;
-        templateCarrito.querySelector('img').setAttribute('src', imagen);
-        templateCarrito.querySelector('p').textContent=precio;
-        templateCarrito.querySelector('th').textContent=id;
-        const clone =templateCarrito.cloneNode(true);
-        fragment.appendChild(clone)
-    })
-    carrito.appendChild(fragment);
-}
+// //const cargarCarritoNtnd = productos => {
+//     if(productosNtnd){
+//     productosNtnd.forEach((p) => {
+//         const { id, imagen, precio, titulo } = p;
+//         templateCarrito.querySelector('h5').textContent=titulo;
+//         templateCarrito.querySelector('img').setAttribute('src', imagen);
+//         templateCarrito.querySelector('p').textContent=precio;
+//         templateCarrito.querySelector('th').textContent=id;
+//         const clone =templateCarrito.cloneNode(true);
+//         fragment.appendChild(clone)
+//     })
+//     carrito.appendChild(fragment);
+// }
 
-//const cargarCarritoConsola = productos => {
-    if(productosConsole){
-    productosConsole.forEach((p) => {
-        const { id, imagen, precio, titulo } = p;
-        templateCarrito.querySelector('h5').textContent=titulo;
-        templateCarrito.querySelector('img').setAttribute('src', imagen);
-        templateCarrito.querySelector('p').textContent=precio;
-        templateCarrito.querySelector('th').textContent=id;
-        const clone =templateCarrito.cloneNode(true);
-        fragment.appendChild(clone)
-    })
-    carrito.appendChild(fragment);
-}
+// //const cargarCarritoConsola = productos => {
+//     if(productosConsole){
+//     productosConsole.forEach((p) => {
+//         const { id, imagen, precio, titulo } = p;
+//         templateCarrito.querySelector('h5').textContent=titulo;
+//         templateCarrito.querySelector('img').setAttribute('src', imagen);
+//         templateCarrito.querySelector('p').textContent=precio;
+//         templateCarrito.querySelector('th').textContent=id;
+//         const clone =templateCarrito.cloneNode(true);
+//         fragment.appendChild(clone)
+//     })
+//     carrito.appendChild(fragment);
+// }
