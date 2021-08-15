@@ -116,43 +116,29 @@
     <table class="table table-striped table-light container">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">Producto</th>
                 <th scope="col">Titulo</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Cantidad</th>
             </tr>
         </thead>
-        <tbody>
 
-            <tr>
-                <th scope="row">1</th>
-                <td class="table__productos">
-                    <img src="./images/xbox/metro-exodus.png" style="width: 50px;" alt="">
-                </td>
-                <td class="table__title">
-                    <h5 class="title">Metro Exodus</h5>
-                </td>
-                <td class="table__price">
-                    <p>48.000</p>
-                </td>
-                <td class="table__cantidad">
-                    <input type="number" min="1" max="5" value="1" class="input__elemento" style="width: 50px;">
-                    <button class="delete btn btn-danger">x</button>
-                    <button class="success btn btn-success">✓</button>
-                </td>
-            </tr>
+        <tbody id="muestra">
 
+        </tbody>
+
+        <template id="template-carrito">
             <tr>
-                <th scope="row">2</th>
+                <th scope="row"></th>
                 <td class="table__productos">
                     <img src="./images/ps5/COD-coldWar.png" style="width: 50px;" alt="">
                 </td>
                 <td class="table__title">
-                    <h5 class="title">COD: Cold War</h5>
+                    <h5 class="title"></h5>
                 </td>
                 <td class="table__price">
-                    <p>48.000</p>
+                    <p></p>
                 </td>
                 <td class="table__cantidad">
                     <input type="number" min="1" max="5" value="1" class="input__elemento" style="width: 50px;">
@@ -160,8 +146,8 @@
                     <button class="success btn btn-success">✓</button>
                 </td>
             </tr>
+        </template>
 
-        </tbody>
     </table>
 
     <!--Formulario-->
@@ -169,25 +155,25 @@
     <div class="titulos" id="ps5">
         <img src="./images/envio.png" alt="" style="width: 80px;">
         <h2>Formulario de envios</h2>
-        </div>
+    </div>
     <form id="form" class="container">
-    <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Nombres</label>
-        <input type="text" class="form-control" id="inputNombre" placeholder="Nombres">
-      </div>
-      <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Apellidos</label>
-        <input type="text" class="form-control" id="inputApellido" placeholder="Apellidos">
-      </div>
-      <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Telefono</label>
-        <input type="text" class="form-control" id="inputTelefono" placeholder="Telefono">
-      </div>
-      <div class="mb-3">
-        <label for="formGroupExampleInput2" class="form-label">Direccion</label>
-        <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion">
-      </div>
-      <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="inputNombre" placeholder="Nombres">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="inputApellido" placeholder="Apellidos">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="inputTelefono" placeholder="Telefono">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion">
+        </div>
+        <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
     </form>
 
     <!--Footer-->
