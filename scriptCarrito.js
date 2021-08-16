@@ -6,9 +6,9 @@ let productosPs5 = JSON.parse(localStorage.getItem('productos Ps5'));
 let productosXbox = JSON.parse(localStorage.getItem('productos Xbox'));
 let productosNtnd = JSON.parse(localStorage.getItem('productos Nintendo'));
 let productosConsole = JSON.parse(localStorage.getItem('productos Consola'));
-let productos = []
+let productos = [];
 
-//concatenando para crear los arreglos:
+// concatenando para crear los arreglos:
 if (productosPs5 == null && productosXbox == null && productosNtnd == null && productosConsole == null) {
     productos = []
 } else if (productosXbox == null && productosNtnd == null && productosConsole == null) {
@@ -45,15 +45,6 @@ if (productosPs5 == null && productosXbox == null && productosNtnd == null && pr
 }else{
 productos = productosPs5.concat(productosXbox, productosNtnd, productosConsole)}
 
-console.log(productos)
-// document.addEventListener('DOMContentLoaded', () => {
-//     cargarCarrito(productos);
-//     cargarCarritoXbox(productosXbox);
-//     cargarCarritoNtnd(productosNtnd);
-//     cargarCarritoConsola(productosConsole);
-// })
-
-//const cargarCarrito = productos => {
 if (productos) {
     productos.forEach((p) => {
         const { id, imagen, precio, titulo } = p;
@@ -65,47 +56,18 @@ if (productos) {
         fragment.appendChild(clone)
     })
     carrito.appendChild(fragment);
+
+    let cantidad = carrito.querySelector("#cantidad");
+    let green = carrito.querySelector(".btn-success");
+    let value = 1;
+    //green.addEventListener('click', confirmaCant());
+    green.addEventListener('click', e => {
+        confirmaCant(e);
+    })
+    
+function confirmaCant() {
+    cantidad.setAttribute('value', value++);
+    
+}
 }
 
-
-//const cargarCarritoXbox = productos => {
-//     if(productosXbox){
-//     productosXbox.forEach((p) => {
-//         const { id, imagen, precio, titulo } = p;
-//         templateCarrito.querySelector('h5').textContent=titulo;
-//         templateCarrito.querySelector('img').setAttribute('src', imagen);
-//         templateCarrito.querySelector('p').textContent=precio;
-//         templateCarrito.querySelector('th').textContent=id;
-//         const clone =templateCarrito.cloneNode(true);
-//         fragment.appendChild(clone)
-//     })
-//     carrito.appendChild(fragment);
-// }
-
-// //const cargarCarritoNtnd = productos => {
-//     if(productosNtnd){
-//     productosNtnd.forEach((p) => {
-//         const { id, imagen, precio, titulo } = p;
-//         templateCarrito.querySelector('h5').textContent=titulo;
-//         templateCarrito.querySelector('img').setAttribute('src', imagen);
-//         templateCarrito.querySelector('p').textContent=precio;
-//         templateCarrito.querySelector('th').textContent=id;
-//         const clone =templateCarrito.cloneNode(true);
-//         fragment.appendChild(clone)
-//     })
-//     carrito.appendChild(fragment);
-// }
-
-// //const cargarCarritoConsola = productos => {
-//     if(productosConsole){
-//     productosConsole.forEach((p) => {
-//         const { id, imagen, precio, titulo } = p;
-//         templateCarrito.querySelector('h5').textContent=titulo;
-//         templateCarrito.querySelector('img').setAttribute('src', imagen);
-//         templateCarrito.querySelector('p').textContent=precio;
-//         templateCarrito.querySelector('th').textContent=id;
-//         const clone =templateCarrito.cloneNode(true);
-//         fragment.appendChild(clone)
-//     })
-//     carrito.appendChild(fragment);
-// }

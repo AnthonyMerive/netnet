@@ -61,21 +61,16 @@ const agregarPsGame = e => {
     e.stopPropagation();
 }
 
-
 const setPsGame = objetoPS => {
     let productoPS = JSON.parse(localStorage.getItem("productos Ps5")) || [];
-    
-    //  if(productoPS.length == 6){ productoPS.shift();}
-    productoPS.push({
-        id: `ps5-${objetoPS.querySelector('.btn-primary').dataset.id}`,
-        titulo: objetoPS.querySelector('h5').textContent,
-        precio: objetoPS.querySelector('p').textContent,
-        imagen: objetoPS.querySelector('img').src,
-        // cantidad : 1
-    });
-
-   
-    localStorage.setItem("productos Ps5", JSON.stringify(productoPS));
+           productoPS.push({
+            id: `ps5-${objetoPS.querySelector('.btn-primary').dataset.id}`,
+            titulo: objetoPS.querySelector('h5').textContent,
+            precio: objetoPS.querySelector('p').textContent,
+            imagen: objetoPS.querySelector('img').src,
+            cantidad: 1
+        });
+       localStorage.setItem("productos Ps5", JSON.stringify(productoPS));
 }
 
 const cargarXbox = xbox => {
@@ -97,20 +92,20 @@ const agregarXboxGame = e => {
     if (e.target.classList.contains('btn-success')) {
         setXboxGame(e.target.parentElement);
         console.log('producto Agregado al carrito')
-        
+
     }
     e.stopPropagation();
 }
 
 const setXboxGame = objetoXbox => {
     let productoXbox = JSON.parse(localStorage.getItem("productos Xbox")) || [];
-    // if(productoXbox.length == 6) productoXbox.shift();
+
     productoXbox.push({
         id: `xbox-${objetoXbox.querySelector('.btn-success').dataset.id}`,
         titulo: objetoXbox.querySelector('h5').textContent,
         precio: objetoXbox.querySelector('p').textContent,
         imagen: objetoXbox.querySelector('img').src,
-        // cantidad : 1
+        cantidad: 1
     });
 
     localStorage.setItem("productos Xbox", JSON.stringify(productoXbox));
@@ -141,13 +136,13 @@ const agregarNtndGame = e => {
 
 const setNtndGame = objetoNtnd => {
     let productoNtnd = JSON.parse(localStorage.getItem("productos Nintendo")) || [];
-    // if(productoNtnd.length == 6) productoNtnd.shift();
+
     productoNtnd.push({
         id: `Ntnd-${objetoNtnd.querySelector('.btn-danger').dataset.id}`,
         titulo: objetoNtnd.querySelector('h5').textContent,
         precio: objetoNtnd.querySelector('p').textContent,
         imagen: objetoNtnd.querySelector('img').src,
-        // cantidad : 1
+        cantidad: 1
     });
 
     localStorage.setItem("productos Nintendo", JSON.stringify(productoNtnd));
@@ -179,13 +174,13 @@ const agregarConsola = e => {
 
 const setConsola = objetoConsole => {
     let productoConsole = JSON.parse(localStorage.getItem("productos Consola")) || [];
-    // if(productoConsole.length == 6) productoConsole.shift();
+
     productoConsole.push({
         id: `cons-${objetoConsole.querySelector('.btn-warning').dataset.id}`,
         titulo: objetoConsole.querySelector('h5').textContent,
         precio: objetoConsole.querySelector('p').textContent,
         imagen: objetoConsole.querySelector('img').src,
-        // cantidad : 1
+        cantidad: 1
     });
     console.log(productoConsole)
 
