@@ -42,7 +42,8 @@
 }
 
 .btn:hover{
-    transform: scale(1.1);
+    transform: scale(1.09);
+    background-color: rgb(155, 153, 153);
 }
 
 #image{

@@ -136,10 +136,9 @@ const alertaConfirma = e => {
 const pintarResults = () => {
     resultados.innerHTML = ''
     const ncantidad = Object.values(productos).reduce((acc, { cantidad }) => acc + cantidad, 0)
-    //console.log(ncantidad)
+  
     const nprecio = Object.values(productos).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0)
-    //console.log(nprecio)
-
+      
     if (ncantidad === 0) {
         resultados.innerHTML = `<th scope="row" colspan="5">Carrito vacío - Vuelva a la tienda y seleccione sus productos</th>`
         return
@@ -163,7 +162,6 @@ const pintarResults = () => {
     }
 
 }
-
 
 const aumentaDisminuye = e => {
 
@@ -208,7 +206,7 @@ const blanquearFormulario = () => {
         const apellido = form.querySelector('#inputApellido').value;
         const telefono = form.querySelector('#inputTelefono').value;
         const direccion = form.querySelector('#inputDireccion').value;
-        
+
         if (nombre == '' || apellido == '' || telefono == '' || direccion == '') {
 
             alert('Verifique los datos ingresados');
