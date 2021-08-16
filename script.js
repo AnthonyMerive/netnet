@@ -56,21 +56,21 @@ const agregarPsGame = e => {
 
     if (e.target.classList.contains('btn-primary')) {
         setPsGame(e.target.parentElement);
-        console.log('producto Agregado al carrito')
-    }
+        alert('producto Agregado al carrito')
+         }
     e.stopPropagation();
 }
 
 const setPsGame = objetoPS => {
     let productoPS = JSON.parse(localStorage.getItem("productos Ps5")) || [];
-           productoPS.push({
-            id: `ps5-${objetoPS.querySelector('.btn-primary').dataset.id}`,
-            titulo: objetoPS.querySelector('h5').textContent,
-            precio: objetoPS.querySelector('p').textContent,
-            imagen: objetoPS.querySelector('img').src,
-            cantidad: 1
-        });
-       localStorage.setItem("productos Ps5", JSON.stringify(productoPS));
+    productoPS.push({
+        id: `ps5-${objetoPS.querySelector('.btn-primary').dataset.id}`,
+        titulo: objetoPS.querySelector('h5').textContent,
+        precio: objetoPS.querySelector('p').textContent,
+        imagen: objetoPS.querySelector('img').src,
+        cantidad: 1
+    });
+    localStorage.setItem("productos Ps5", JSON.stringify(productoPS));
 }
 
 const cargarXbox = xbox => {
@@ -91,7 +91,7 @@ const agregarXboxGame = e => {
 
     if (e.target.classList.contains('btn-success')) {
         setXboxGame(e.target.parentElement);
-        console.log('producto Agregado al carrito')
+        alert('producto Agregado al carrito')
 
     }
     e.stopPropagation();
@@ -129,7 +129,7 @@ const agregarNtndGame = e => {
 
     if (e.target.classList.contains('btn-danger')) {
         setNtndGame(e.target.parentElement);
-        console.log('producto Agregado al carrito')
+        alert('producto Agregado al carrito')
     }
     e.stopPropagation();
 }
@@ -166,7 +166,7 @@ const agregarConsola = e => {
 
     if (e.target.classList.contains('btn-warning')) {
         setConsola(e.target.parentElement);
-        console.log('producto Agregado al carrito')
+        alert('producto Agregado al carrito')
     }
     e.stopPropagation();
 }
@@ -182,7 +182,7 @@ const setConsola = objetoConsole => {
         imagen: objetoConsole.querySelector('img').src,
         cantidad: 1
     });
-   
+
 
 
     localStorage.setItem("productos Consola", JSON.stringify(productoConsole));
