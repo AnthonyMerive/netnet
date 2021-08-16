@@ -41,6 +41,10 @@
     box-shadow: 2px 2px  black;
 }
 
+.btn:hover{
+    transform: scale(1.1);
+}
+
 #image{
     max-width: 100%;
     width: 200px;
