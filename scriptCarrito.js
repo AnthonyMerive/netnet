@@ -83,7 +83,7 @@ const pintarResults = () => {
     //console.log(nprecio)
 
     if (ncantidad === 0) {
-        resultados.innerHTML = `<th scope="row" colspan="5">Carrito vacío - Vuelva a la tienda y seleccione un producto</th>`
+        resultados.innerHTML = `<th scope="row" colspan="5">Carrito vacío - Vuelva a la tienda y seleccione sus productos</th>`
         return
     }
         if (ncantidad >= 1) {
