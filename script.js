@@ -182,7 +182,7 @@ const setConsola = objetoConsole => {
         imagen: objetoConsole.querySelector('img').src,
         cantidad: 1
     });
-    console.log(productoConsole)
+   
 
 
     localStorage.setItem("productos Consola", JSON.stringify(productoConsole));

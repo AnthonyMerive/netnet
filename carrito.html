@@ -124,9 +124,13 @@
             </tr>
         </thead>
 
-        <tbody id="muestra">
+        <tbody id="muestra"></tbody>
 
-        </tbody>
+        <tfoot>
+            <tr id="totales">
+                <th scope="row" colspan="5">Carrito vacío</th>
+            </tr>
+        </tfoot>
 
         <template id="template-carrito">
             <tr>
@@ -141,13 +145,22 @@
                     <p></p>
                 </td>
                 <td class="table__cantidad">
-                    <form>
-                        <input id="cantidad" type="number" class="input__elemento" style="width: 50px;">
-                    </form>
-                    <button class="delete btn btn-danger">-</button>
+                    <span></span>
                     <button class="success btn btn-success">+</button>
+                    <button class="delete btn btn-danger">-</button>
                 </td>
             </tr>
+        </template>
+
+        <template id="template-totales">
+            <th scope="row" colspan="2">Total productos</th>
+            <td></td>
+            <td class="font-weight-bold">$ <span></span></td>
+            <td>
+                <button class="btn btn-danger btn-sm" id="vaciar">
+                    vaciar todo
+                </button>
+            </td>
         </template>
 
     </table>
