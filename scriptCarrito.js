@@ -5,6 +5,7 @@ let regresoConsole = document.querySelector('#consolaReturn');
 let regresoPs = document.querySelector('#psReturn');
 let regresoXbox = document.querySelector('#xboxReturn');
 let regresoNintendo = document.querySelector('#nintendoReturn');
+let form = document.querySelector('#form');
 
 let templateCarrito = document.querySelector("#template-carrito").content;
 let templateResults = document.querySelector('#template-totales').content;
@@ -114,13 +115,14 @@ const pintarCarrito = () => {
     })
     carrito.appendChild(fragment);
 
-    pintarResults()
+    pintarResults();
+    blanquearFormulario();
 }
 
 const alertaConfirma = e => {
     e.preventDefault();
 
-    let opcion = confirm("Si sale, se perderan los cambios\n\n ¿continuar?")
+    let opcion = confirm("Se perderan los cambios\n\n ¿Continuar?")
     if (opcion === true) {
         window.open("./index.html", "_self");
         localStorage.clear();
@@ -191,4 +193,33 @@ const aumentaDisminuye = e => {
         pintarCarrito()
     }
     e.stopPropagation();
+}
+
+const blanquearFormulario = () => {
+
+    if (productos.length == 0) {
+        form.innerHTML = `<strong>-Sin productos para envio-</strong>`
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nombre = form.querySelector('#inputNombre').value;
+        const apellido = form.querySelector('#inputApellido').value;
+        const telefono = form.querySelector('#inputTelefono').value;
+        const direccion = form.querySelector('#inputDireccion').value;
+        
+        if (nombre == '' || apellido == '' || telefono == '' || direccion == '') {
+
+            alert('Verifique los datos ingresados');
+
+        } else {
+
+            alert(`!!COMPRA CONFIRMADA!!\n\nSeñor/a. ${nombre} ${apellido}, su compra ha sido confirmada y se enviara a la direccion: ${direccion}\nnos comunicaremos con usted a su telefono N°: ${telefono}
+        `)
+            productos = [];
+            localStorage.clear();
+            pintarCarrito()
+        }
+    })
 }
