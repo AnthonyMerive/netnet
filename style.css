@@ -76,6 +76,14 @@
     color: rgb(17, 91, 177);
 }
 
+#aumenta{
+    padding:0 5px;
+}
+
+#disminuye{
+    padding:0 5px;
+}
+
 /*agregando estilo para que no se vea vacia la navbar y se ajuste el tamaño de las cards en pantalla completa*/
 
 @media (min-width: 1024px){

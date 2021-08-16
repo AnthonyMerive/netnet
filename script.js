@@ -57,7 +57,7 @@ const agregarPsGame = e => {
     if (e.target.classList.contains('btn-primary')) {
         setPsGame(e.target.parentElement);
         alert('producto Agregado al carrito')
-         }
+        }
     e.stopPropagation();
 }
 
