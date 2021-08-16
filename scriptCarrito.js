@@ -9,7 +9,7 @@ let productosXbox = JSON.parse(localStorage.getItem('productos Xbox'));
 let productosNtnd = JSON.parse(localStorage.getItem('productos Nintendo'));
 let productosConsole = JSON.parse(localStorage.getItem('productos Consola'));
 let productos = [];
-
+localStorage.clear();
 // concatenando para crear los nuevos arreglos:
 if (productosPs5 == null && productosXbox == null && productosNtnd == null && productosConsole == null) {
     productos = []
@@ -76,50 +76,63 @@ const pintarCarrito = () => {
 }
 
 const pintarResults = () => {
-
+    resultados.innerHTML = ''
     const ncantidad = Object.values(productos).reduce((acc, { cantidad }) => acc + cantidad, 0)
     //console.log(ncantidad)
     const nprecio = Object.values(productos).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0)
     //console.log(nprecio)
 
-    resultados.innerHTML = ''
-    templateResults.querySelectorAll('td')[0].textContent = ncantidad;
-    templateResults.querySelector('span').textContent = nprecio;
-    const clone = templateResults.cloneNode(true);
-    fragment.appendChild(clone);
-    resultados.appendChild(fragment);
-
-    const limpiar = document.querySelector('#vaciar');
-
-    limpiar.addEventListener('click', () => {
-        productos = [];
-        localStorage.clear();
-        pintarCarrito()
-    })
-
-}
-
-
-const aumentaDisminuye = e => {
-
-    if (e.target.classList.contains('btn-success')) {
-        let filtro = e.target.dataset.id;
-        let objeto = productos.find(cant => cant.id == filtro);
-        objeto.cantidad = productos.find(cant => cant.id == filtro).cantidad + 1;
-        objeto = { ...productos }
-        pintarCarrito()
+    if (ncantidad === 0) {
+        resultados.innerHTML = `<th scope="row" colspan="5">Carrito vacío - Vuelva a la tienda y seleccione un producto</th>`
+        return
     }
-    if (e.target.classList.contains('btn-danger')) {
-        let filtro = e.target.dataset.id;
-        let objeto = productos.find(cant => cant.id == filtro);
-        objeto.cantidad = productos.find(cant => cant.id == filtro).cantidad - 1;
-        if (objeto.cantidad === 0) {
-            objeto.cantidad = 1 ;
-            
-        } else {
-            objeto = { ...productos }
+        if (ncantidad >= 1) {
+            resultados.innerHTML = ''
+            templateResults.querySelectorAll('td')[0].textContent = ncantidad;
+            templateResults.querySelector('span').textContent = nprecio;
+            const clone = templateResults.cloneNode(true);
+            fragment.appendChild(clone);
+            resultados.appendChild(fragment);
+
+            const limpiar = document.querySelector('#vaciar');
+
+            limpiar.addEventListener('click', () => {
+                productos = [];
+                localStorage.clear();
+                pintarCarrito()
+
+            })
         }
-        pintarCarrito()
+
     }
-    e.stopPropagation();
-}
+
+
+    const aumentaDisminuye = e => {
+
+        if (e.target.classList.contains('btn-success')) {
+            let filtro = e.target.dataset.id;
+            let objeto = productos.find(cant => cant.id == filtro);
+            objeto.cantidad = productos.find(cant => cant.id == filtro).cantidad + 1;
+            objeto = { ...productos }
+            pintarCarrito()
+        }
+        if (e.target.classList.contains('btn-danger')) {
+
+            let filtro = e.target.dataset.id;
+            let objeto = productos.find(cant => cant.id == filtro);
+            objeto.cantidad = productos.find(cant => cant.id == filtro).cantidad - 1;
+
+            console.log(objeto)
+
+            if (objeto.cantidad === 0) {
+
+                const index = productos.indexOf(objeto)
+                productos.splice(index, 1);
+
+            } else {
+                objeto = { ...productos }
+            }
+            pintarCarrito()
+        }
+        e.stopPropagation();
+    }
